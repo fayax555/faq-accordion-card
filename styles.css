@@ -41,16 +41,16 @@ body {
 }
 
 .container {
-  width: 800px;
-  margin: auto;
-  padding: 20px;
-  background-color: white;
-  min-height: 100px;
-  border-radius: 20px;
   position: absolute;
-  top: clamp(1px, 50vh - 12rem, 60rem);
+  width: 920px;
+  margin: auto;
+  padding-top: 45px;
+  background-color: white;
+  height: 509px;
+  border-radius: 20px;
+  top: clamp(1px, 50vh - 22.3rem, 60rem);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-47.3%);
 }
 
 main {
@@ -61,21 +61,31 @@ main {
 }
 
 details {
-  padding: 1rem;
+  font-size: 14px;
 }
 
-details:not(details:last-of-type) {
+details {
+  padding: 16.6px;
   border-bottom: 1px solid hsl(240, 5%, 61%);
+  padding-left: 2.5px;
+  max-width: 43.5ch;
 }
 
 details summary {
-  /* list-style: none; */
+  list-style: none;
   color: hsl(238, 29%, 16%);
   cursor: pointer;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
+}
+/* .content {
+  z-index: 1;
+} */
+.content h1 {
+  padding-bottom: 18px;
+  color: hsl(238, 29%, 16%);
 }
 
 details summary:hover {
@@ -85,6 +95,7 @@ details summary:hover {
 details[open] summary {
   color: hsl(238, 29%, 16%);
   font-weight: 700;
+  padding-bottom: 9px;
 }
 
 details[open] summary img {
@@ -97,33 +108,35 @@ details summary img {
 
 details > p {
   color: hsl(240, 6%, 50%);
+  letter-spacing: 0.003em;
+  line-height: 18px;
+  font-size: 12px;
 }
 
 .desktop-only {
   position: relative;
+  height: 509px;
+  transform: translateY(-65px);
 }
 
 .desktop-only .box {
   position: absolute;
-  top: 120px;
-  left: -35px;
+  top: 207px;
+  left: -95px;
   z-index: 1;
 }
 
-.woman-online {
-  transform: translateX(80px);
+.img-wrapper {
+  position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
-.woman-online img {
-  transform: translateX(-100px);
-}
-
-.content {
-  z-index: 1;
+.woman-online-img {
+  position: absolute;
+  transform: scale(1.05) translate(-76px, 75px);
 }
 
 .bg-pattern-img {
-  position: absolute;
-  top: 0;
+  transform: scale(2.2) translate(-153px, -19px);
 }
