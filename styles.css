@@ -2,7 +2,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  height: 100%;
   font-family: 'Kumbh Sans', sans-serif;
   background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
 }
@@ -39,11 +38,10 @@ a {
 /* ------------------------------------------------ */
 body {
   padding: 20px;
-  min-height: 120%;
+  min-height: 100vh;
 }
 
 h1 {
-  /*  */
   text-align: center;
 }
 
@@ -52,10 +50,8 @@ h1 {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0px 35px 50px -5px rgba(0, 0, 0, 0.31);
-  /*  */
   padding: 50px 25px;
   margin-top: 130px;
-  /* mobile */
   max-width: 380px;
 }
 
@@ -87,14 +83,16 @@ h1 {
   transform: translateY(150px);
 }
 
+.content h1 {
+  padding-bottom: 18px;
+  color: hsl(238, 29%, 16%);
+}
+
 details {
-  font-size: 14px;
   padding: 16.6px 0;
   border-bottom: 1px solid hsl(240, 5%, 91%);
   padding-left: 2.5px;
   max-width: 43.5ch;
-
-  /* mobile */
   font-size: 13px;
 }
 
@@ -106,11 +104,6 @@ details summary {
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
-}
-
-.content h1 {
-  padding-bottom: 18px;
-  color: hsl(238, 29%, 16%);
 }
 
 details summary:hover {
@@ -140,22 +133,19 @@ details > p {
 
 @media (min-width: 1100px) {
   body {
-    min-height: revert;
+    display: grid;
+    place-content: center;
+    padding: revert;
+    overflow-y: overlay;
   }
 
   .container {
-    position: absolute;
     width: 920px;
-    margin: auto;
     padding: revert;
     padding-top: 45px;
-    background-color: white;
-    min-height: 509px;
-    border-radius: 20px;
-    top: clamp(2rem, 50vh - 22.3rem, 60rem);
-    left: 50%;
-    transform: translateX(-47.3%);
     max-width: revert;
+    margin-top: revert;
+    margin-right: -50px;
   }
 
   h1 {
@@ -174,53 +164,6 @@ details > p {
     font-size: 14px;
   }
 
-  details {
-    padding: 16.6px;
-    border-bottom: 1px solid hsl(240, 5%, 91%);
-    padding-left: 2.5px;
-    max-width: 43.5ch;
-  }
-
-  details summary {
-    list-style: none;
-    color: hsl(238, 29%, 16%);
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .content h1 {
-    padding-bottom: 18px;
-    color: hsl(238, 29%, 16%);
-  }
-
-  details summary:hover {
-    color: hsl(14, 88%, 65%);
-  }
-
-  details[open] summary {
-    color: hsl(238, 29%, 16%);
-    font-weight: 700;
-    padding-bottom: 9px;
-  }
-
-  details[open] summary img {
-    transform: rotate(180deg);
-  }
-
-  details summary img {
-    transition: 0.25s ease;
-  }
-
-  details > p {
-    color: hsl(240, 6%, 50%);
-    letter-spacing: 0.003em;
-    line-height: 18px;
-    font-size: 12px;
-  }
-
   .desktop-only {
     display: revert;
     min-height: 115%;
@@ -235,10 +178,10 @@ details > p {
     position: absolute;
     top: 207px;
     left: -95px;
-    z-index: 1;
+    z-index: 2;
   }
 
-  .img-wrapper {
+  .desktop-only .img-wrapper {
     position: relative;
     overflow: hidden;
     height: 100%;
@@ -247,6 +190,7 @@ details > p {
   .woman-online-img {
     position: absolute;
     transform: scale(1.05) translate(-76px, 75px);
+    z-index: 1;
   }
 
   .bg-pattern-img {
